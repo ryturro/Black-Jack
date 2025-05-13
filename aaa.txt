@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 siemaneczko
+=======
+ala ma kota 
+>>>>>>> c4ecf2197e11a7d81b31a6dd611a277910345473
