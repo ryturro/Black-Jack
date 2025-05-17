@@ -1,10 +1,10 @@
 ZASADY GRY W BLACKJACK
 
 1. CEL GRY:
-   Celem gry w Blackjacka jest uzyskanie sumy punktów kart jak najbliższej 21, ale nie większej niż 21. Gracz rywalizuje z krupierem, nie z innymi graczami.
+   Celem gry w Blackjacka jest uzyskanie sumy punktów kart jak najbliższej 21, ale nie większej niż 21. Gracz rywalizuje z krupierem, nie    z innymi graczami.
 
 2. WARTOŚCI KART:
-   - Karty od 2 do 10 mają wartość równą liczbie oczek.
+   - Karty od 2 do 10 mają wartość równe liczbie oczek.
    - Walet (J), Dama (Q) i Król (K) mają wartość 10.
    - As (A) może mieć wartość 1 lub 11 – w zależności od tego, co bardziej się opłaca graczowi.
 
@@ -42,4 +42,4 @@ ZASADY GRY W BLACKJACK
 8. OBSTAWIANIE:
    - Gracz ustawia zakład przed rozdaniem kart.
    - W przypadku wygranej gracz otrzymuje 2:1.
-   - Za Blackjacka gracz  otrzymuje 3:2. 
+   - Za Blackjacka gracz  otrzymuje 3:2.  
