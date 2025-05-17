@@ -2,5 +2,5 @@ deck = Deck()
 deck.shuffle()  # Tasowanie talii
 player_card = deck.deal_card()  # Losowanie karty dla gracza
 dealer_card = deck.deal_card()  # Losowanie karty dla dealera
-print(f"Player drew: {player_card}")
-print(f"Dealer drew: {dealer_card}")
+print(f"Player drew: {player_card} ")
+print(f"Dealer drew: {dealer_card} ")
