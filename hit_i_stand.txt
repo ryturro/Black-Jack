@@ -1,0 +1,9 @@
+while player.score < 21:
+        move = input("Do you want to hit? (h): ").lower()
+        if move == 'h':
+            player.add_card(deck.deal_card())
+            print(f"Your hand: {player.show_hand()} (Score: {player.score})")
+            if player.score > 21:
+                break
+        else:
+            print("Invalid input. Type 'h'")
