@@ -1,0 +1,8 @@
+class Chip:
+
+    def __init__(self,balance = 0):
+        self.balance = balance
+        self.bet = 0
+    
+    def add_balance(self,amount):
+        self.balance += amount
