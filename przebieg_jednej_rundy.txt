@@ -1,0 +1,3 @@
+def play_round(deck, player, dealer):
+    player.reset_hand()
+    dealer.reset_hand()
