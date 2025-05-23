@@ -14,3 +14,13 @@ class Chip:
     def clear_bet(self):
         '''Clears the existing bet for new round'''
         self.bet = 0
+
+    def place_bet(self, amount):
+        if amount > self.balance:
+            raise ValueError("Brak wystarczających środków na zakład!")
+        self.bet = amount
+        self.balance -= amount
+
+    def win_bet(self):
+        self.balance += 2 * self.bet
+        self.clear_bet()
