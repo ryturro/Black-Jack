@@ -1,0 +1,5 @@
+def check_winner(player, dealer):
+    if player.score > 21:
+        return "Player busts! Dealer wins."
+    elif dealer.score > 21:
+        return "Dealer busts! Player wins!"
