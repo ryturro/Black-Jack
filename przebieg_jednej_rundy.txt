@@ -1,3 +1,10 @@
 def play_round(deck, player, dealer):
     player.reset_hand()
     dealer.reset_hand()
+
+    print(f"\nYou have {player.chips.total} chips.")
+    while True:
+        try:
+            player.chips.bet = int(input("Place your bet: "))
+            if 0 < player.chips.bet <= player.chips.total:
+                break
