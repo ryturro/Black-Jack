@@ -1,11 +1,26 @@
 while player.score < 21:
-        move = input("Do you want to hit or stand? (h/s): ").lower()
-        if move == 'h':
-            player.add_card(deck.deal_card())
-            print(f"Your hand: {player.show_hand()} (Score: {player.score})")
-            if player.score > 21:
-                break
-        elif move == 's':
+    # Podstawowe informacje dla gracza
+    print(f"\nCurrent cards: {player.show_hand()}")
+    print(f"Current score: {player.score}\n")
+    
+    # Proste pobieranie decyzji
+    move = input("Hit (h) or stand (s)? ").lower().strip()
+    
+    if move == 'h':
+        new_card = deck.deal_card()
+        print(f"\nYou drew: {new_card}")
+        player.add_card(new_card)
+        
+        print(f"New hand: {player.show_hand()}")
+        print(f"New score: {player.score}")
+        
+        if player.score > 21:
+            print("\nBust! You went over 21.")
             break
-        else:
-            print("Invalid input. Type 'h' or 's'.")
+            
+    elif move == 's':
+        print("\nYou stand with current hand.")
+        break
+        
+    else:
+        print("Please enter 'h' or 's'.")
