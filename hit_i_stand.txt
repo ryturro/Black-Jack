@@ -1,26 +1,45 @@
 while player.score < 21:
-    # Podstawowe informacje dla gracza
-    print(f"\nCurrent cards: {player.show_hand()}")
-    print(f"Current score: {player.score}\n")
+    # Rozbudowany interfejs gracza
+    print("\n" + "="*30)
+    print("YOUR CURRENT STATUS:")
+    print(f"Cards: {player.show_hand()}")
+    print(f"Total score: {player.score}")
+    print("="*30 + "\n")
     
-    # Proste pobieranie decyzji
-    move = input("Hit (h) or stand (s)? ").lower().strip()
+    # Lepsza obsługa inputu
+    move = input("Choose your action:\n"
+                "[h] Hit - take another card\n"
+                "[s] Stand - keep your hand\n"
+                "Your choice: ").lower().strip()
     
+    # Rozbudowana logika akcji
     if move == 'h':
+        print("\nDealing new card...")
         new_card = deck.deal_card()
-        print(f"\nYou drew: {new_card}")
         player.add_card(new_card)
         
-        print(f"New hand: {player.show_hand()}")
-        print(f"New score: {player.score}")
+        print(f"\nYou received: {new_card}")
+        print(f"Updated hand: {player.show_hand()}")
+        print(f"New total: {player.score}")
         
         if player.score > 21:
-            print("\nBust! You went over 21.")
+            print("\n" + "!"*50)
+            print("BUST! You exceeded 21 points.")
+            print("!"*50)
             break
             
     elif move == 's':
-        print("\nYou stand with current hand.")
+        print("\n" + "-"*40)
+        print("You decided to stand.")
+        print(f"Final score: {player.score}")
+        print("-"*40)
         break
         
     else:
-        print("Please enter 'h' or 's'.")
+        print("\nInvalid input!")
+        print("Please type exactly:")
+        print("[h] - to take another card")
+        print("[s] - to keep your current hand")
+    
+    # Separator rundy
+    print("\n" + "-"*50 + "\n")
