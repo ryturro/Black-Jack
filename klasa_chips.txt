@@ -1,26 +1,10 @@
-class Chip:
-
-    def __init__(self,balance = 0):
-        self.balance = balance
+class Chips:
+    def __init__(self, total=100):
+        self.total = total
         self.bet = 0
-    
-    def add_balance(self,amount):
-        self.balance += amount
-        
-    def remove_balance(self,amount):
-        '''Removes chips from balance'''
-        self.balance -= amount
-        
-    def clear_bet(self):
-        '''Clears the existing bet for new round'''
-        self.bet = 0
-
-    def place_bet(self, amount):
-        if amount > self.balance:
-            raise ValueError("Brak wystarczających środków na zakład!")
-        self.bet = amount
-        self.balance -= amount
 
     def win_bet(self):
-        self.balance += 2 * self.bet
-        self.clear_bet()
+        self.total += self.bet
+
+    def lose_bet(self):
+        self.total -= self.bet
