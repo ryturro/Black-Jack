@@ -1,6 +1,0 @@
-class Dealer(Player):
-    def __init__(self):
-        super().__init__("Dealer")
-
-    def show_partial_hand(self):
-        return f"{self.hand[0]}, [Hidden Card]"
