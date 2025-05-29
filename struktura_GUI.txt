@@ -1,0 +1,69 @@
+import tkinter as tk
+from PIL import Image, ImageTk
+
+class BlackjackGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Blackjack")
+
+        # Top frame: chips and bet input
+        self.top_frame = tk.Frame(root)
+        self.top_frame.pack(pady=10)
+
+        tk.Label(self.top_frame, text="Chips:").grid(row=0, column=0, sticky="e")
+        self.chips_label = tk.Label(self.top_frame, text="100")  # przykładowa wartość
+        self.chips_label.grid(row=0, column=1, sticky="w", padx=(0, 20))
+
+        tk.Label(self.top_frame, text="Bet:").grid(row=0, column=2, sticky="e")
+        self.bet_var = tk.StringVar()
+        self.bet_entry = tk.Entry(self.top_frame, textvariable=self.bet_var, width=10)
+        self.bet_entry.grid(row=0, column=3, sticky="w")
+
+        self.place_bet_button = tk.Button(self.top_frame, text="Place Bet")
+        self.place_bet_button.grid(row=0, column=4, padx=10)
+
+        # Dealer label and frame
+        dealer_label = tk.Label(root, text="Dealer's Hand:")
+        dealer_label.pack()
+        self.dealer_frame = tk.Frame(root)
+        self.dealer_frame.pack(pady=5)
+
+        # Player label and frame
+        player_label = tk.Label(root, text="Your Hand:")
+        player_label.pack()
+        self.player_frame = tk.Frame(root)
+        self.player_frame.pack(pady=5)
+
+        # Buttons frame
+        self.buttons_frame = tk.Frame(root)
+        self.buttons_frame.pack(pady=10)
+
+        self.hit_button = tk.Button(self.buttons_frame, text="Hit", width=10, state=tk.DISABLED)
+        self.hit_button.pack(side=tk.LEFT, padx=5)
+
+        self.stand_button = tk.Button(self.buttons_frame, text="Stand", width=10, state=tk.DISABLED)
+        self.stand_button.pack(side=tk.LEFT, padx=5)
+
+        self.double_button = tk.Button(self.buttons_frame, text="Double Down", width=10, state=tk.DISABLED)
+        self.double_button.pack(side=tk.LEFT, padx=5)
+
+        self.new_round_button = tk.Button(root, text="New Round", width=20, state=tk.DISABLED)
+        self.new_round_button.pack(pady=10)
+
+        self.message_label = tk.Label(root, text="", font=("Arial", 12))
+        self.message_label.pack(pady=5)
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.geometry("800x600")
+
+    # Background image (optional)
+    bg_image = Image.open("background.png").resize((800, 600))
+    bg_photo = ImageTk.PhotoImage(bg_image)
+    bg_label = tk.Label(root, image=bg_photo)
+    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+    # Initialize GUI
+    gui = BlackjackGUI(root)
+
+    root.mainloop()
