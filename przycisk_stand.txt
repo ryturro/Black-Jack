@@ -1,0 +1,14 @@
+def stand(self):
+        self.hit_button.config(state=tk.DISABLED)
+        self.stand_button.config(state=tk.DISABLED)
+        self.double_button.config(state=tk.DISABLED)
+
+        self.show_hands(hide_dealer_first_card=False)
+
+        dealer_score = self.calculate_score(self.dealer_hand)
+        player_score = self.calculate_score(self.player_hand)
+
+        while dealer_score < 17:
+            self.dealer_hand.append(self.deck.deal_card())
+            self.show_hands(hide_dealer_first_card=False)
+            dealer_score = self.calculate_score(self.dealer_hand)
