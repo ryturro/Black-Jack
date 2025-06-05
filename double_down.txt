@@ -1,0 +1,13 @@
+def double_down(self):
+    if self.double_down_used:
+        return
+
+    if self.player_chips < self.current_bet:
+        messagebox.showerror("Error", "Not enough chips to double down.")
+        return
+
+    self.player_chips -= self.current_bet
+    self.current_bet *= 2
+    self.chips_label.config(text=str(self.player_chips))
+    self.double_down_used = True
+
