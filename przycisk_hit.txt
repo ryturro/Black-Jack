@@ -1,0 +1,11 @@
+ def hit(self):
+        self.player_hand.append(self.deck.deal_card())
+        self.show_hands(hide_dealer_first_card=True)
+        player_score = self.calculate_score(self.player_hand)
+
+        if player_score > 21:
+            self.end_round("You busted! Dealer wins.")
+        elif player_score == 21:
+            self.stand()
+
+        self.double_button.config(state=tk.DISABLED) 
