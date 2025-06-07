@@ -4,7 +4,7 @@ def new_round(self):
         self.new_round_button.config(state=tk.DISABLED)
         self.place_bet_button.config(state=tk.DISABLED)
         self.bet_entry.config(state=tk.DISABLED)
-        return
+        return 
 
     self.player_hand = []
     self.dealer_hand = []
