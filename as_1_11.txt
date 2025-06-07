@@ -1,0 +1,9 @@
+for card in self.hand:
+    total += card.get_numeric_value()  # A = 11, J/Q/K = 10, inne = cyfra
+    if card.value == "A":
+        aces += 1
+
+# Redukcja Asów do 1, jeśli suma przekracza 21
+while total > 21 and aces:
+    total -= 10  # traktuj jednego Asa jako 1 zamiast 11
+    aces -= 1

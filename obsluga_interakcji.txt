@@ -1,0 +1,16 @@
+def main():
+    print("Welcome to Blackjack!\n")
+    deck = Deck()
+    player = Player("You")
+    dealer = Dealer()
+
+    while player.chips.total > 0:
+        play_round(deck, player, dealer)
+        if len(deck.cards) < 15:
+            print("Shuffling new deck...")
+            deck = Deck()
+        cont = input("\nDo you want to play another round? (y/n): ").lower()
+        if cont != 'y':
+            break
+
+    print("Game over! Thanks for playing.")

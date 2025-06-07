@@ -1,0 +1,15 @@
+def check_winner(player, dealer):
+    if player.score > 21:
+        return "Player busts! Dealer wins."
+    elif dealer.score > 21:
+        return "Dealer busts! Player wins!"
+    elif player.score == 21 and len(player.hand) == 2:
+        return "Blackjack! Player wins!"
+    elif dealer.score == 21 and len(dealer.hand) == 2:
+        return "Blackjack! Dealer wins!"
+    elif player.score > dealer.score:
+        return "Player wins!"
+    elif player.score < dealer.score:
+        return "Dealer wins!"
+    else:
+        return "It's a tie!"
